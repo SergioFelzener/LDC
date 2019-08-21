@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Video Games
+    </h1>
+    <table id="tabela">
+
+    </table>
+</body>
+<script>
+    var vgame = [{
+            vgame: "xboxone",
+            ano: "2005",
+            midia: "dvd",
+            control: "2 controles",
+            fabricante: "Microsoft"
+
+        },
+        {
+            vgame: "PS3",
+            ano: "2005",
+            midia: "dvd",
+            control: "2 controles",
+            fabricante: "Sony"
+
+        },
+        {
+            vgame: "Super Nes",
+            ano: "1990",
+            midia: "cartucho",
+            control: "2 controles",
+            fabricante: "Nintendo"
+
+        },
+        {
+            vgame: "Xbox One",
+            ano: "2013",
+            midia: "Blue-Ray",
+            control: "2 controles",
+            fabricante: "Microsoft"
+
+        },
+        {
+            vgame: "PS4",
+            ano: "2013",
+            midia: "Blue-Ray",
+            control: "2 controles",
+            fabricante: "Sony Corporate"
+
+        }
+    ]
+
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
+    for (var i = 0; i < 4; i++) {
+        var tr = document.createElement('tr');
+
+        // 1
+        var td = document.createElement('td');
+        var span = document.createElement('span');
+        span.innerHTML = 'teste ' + (i + 1);
+        td.appendChild(span);
+        tr.appendChild(td);
+
+        // 2
+        td = document.createElement('td');
+        span = document.createElement('span');
+        span.innerHTML = 'texto ' + (i + 1);
+        td.appendChild(span);
+        tr.appendChild(td);
+
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+
+    document.body.appendChild(table);
+
+    //var table = document.createElement ("tabela");
+    //var textoP = document.createTextNode("porra");
+    //document.body.appendChild(tabela);
+    //table.appendChild ('teste');
+
+    //var tbody = document.createElement ('tbody');
+    //for(let i = 0; i < 4; i++){
+    //  let tr = document.createElement('tr');
+
+    //console.log ('tbody');
+
+    //
+    //var l1c1 = document.createElement ("videogame");
+</script>
+
+</html>
