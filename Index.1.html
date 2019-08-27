@@ -5,24 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Tabela JS</title>
 </head>
 
-<body>
-    <h1>
-        Video Games
-    </h1>
-    <table id="tabela">
+<style>
+    h1 {
+        text-align: center;
+    }
+</style>
 
-    </table>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <h1 id="h1"></h1>
+                <!-- Criando tabela no HTML vazia sera alimentada via javascript-->
+                <table id="tabela" class="table table-striped table-condensed">
+                    <!-- Criando cabeçalho da tabela no HTML vazio sera alimentado via javascript-->
+                    <thead id="thead" >
+
+                    </thead>
+                    <!-- Criando corpo da tabela no HTML vazio sera alimentado via javascript-->
+                    <tbody id="tbody">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 <script>
+    // criando vetor com dados para inserir na tabela
     var vgame = [{
-            vgame: "xboxone",
+            vgame: "xbox 360",
             ano: "2005",
             midia: "dvd",
             control: "2 controles",
-            fabricante: "Microsoft"
+            fabricante: "Microsoft Corporate"
 
         },
         {
@@ -30,7 +54,7 @@
             ano: "2005",
             midia: "dvd",
             control: "2 controles",
-            fabricante: "Sony"
+            fabricante: "Sony Corporate"
 
         },
         {
@@ -38,7 +62,7 @@
             ano: "1990",
             midia: "cartucho",
             control: "2 controles",
-            fabricante: "Nintendo"
+            fabricante: "Nintendo SA."
 
         },
         {
@@ -46,7 +70,7 @@
             ano: "2013",
             midia: "Blue-Ray",
             control: "2 controles",
-            fabricante: "Microsoft"
+            fabricante: "Microsoft Corporate"
 
         },
         {
@@ -58,31 +82,96 @@
 
         }
     ]
+    // criando variavel do h1 titulo da pagina 
+    var h1 = document.getElementById("h1");
+    //criando variavel do texto que colocarei no H1
+    var texto = document.createTextNode("TABELA de GAMES")
+    //enviando informacao ao HTML
+    h1.appendChild(texto);
 
-    var table = document.createElement('table');
-    var tbody = document.createElement('tbody');
-    for (var i = 0; i < 4; i++) {
-        var tr = document.createElement('tr');
+    // Usa-se o "id" de cabeçalho da tabela para criar uma variavel
+    var thead = document.getElementById("thead");
+    //Criando elemento de titulo de coluna - 01
+    var th1 = document.createElement("th");
+    // Criando variavel para o titulo de coluna
+    var texth1 = document.createTextNode("VideoGame");
+    // llinkando o titulo ao conteudo da coluna  
+    th1.appendChild(texth1);
+    //linka o cabecalho ao 1 item da 1 coluna
+    thead.appendChild(th1);
 
-        // 1
-        var td = document.createElement('td');
-        var span = document.createElement('span');
-        span.innerHTML = 'teste ' + (i + 1);
-        td.appendChild(span);
-        tr.appendChild(td);
+    // repetindo para cada item da tabela
+    var th2 = document.createElement("th");
+    var texth2 = document.createTextNode("Ano");
+    th2.appendChild(texth2);
+    thead.appendChild(th2);
+    var th3 = document.createElement("th");
+    var texth3 = document.createTextNode("Midia");
+    th3.appendChild(texth3);
+    thead.appendChild(th3);
+    var th4 = document.createElement("th");
+    var texth4 = document.createTextNode("Control");
+    th4.appendChild(texth4);
+    thead.appendChild(th4);
+    var th5 = document.createElement("th");
+    var texth5 = document.createTextNode("Fabricante");
+    th5.appendChild(texth5);
+    thead.appendChild(th5);
 
-        // 2
-        td = document.createElement('td');
-        span = document.createElement('span');
-        span.innerHTML = 'texto ' + (i + 1);
-        td.appendChild(span);
-        tr.appendChild(td);
+    /* Loop para criação de linhas e preenchimento de cada celula,
+        mediante a quantidade (.length) de ramos (children) do cabeçalho (variavel thead)*/
 
-        tbody.appendChild(tr);
-    }
-    table.appendChild(tbody);
+    // criando a variavel de contador muito usam [i]. usei cont de contador que percorrerá a arvore DOM com thead.children.length
+    for (var cont = 0; cont < thead.children.length; cont++) {
+        //variavel da linha 1
+        var linha1 = document.createElement("tr");
+        //liga uma linha ao corpo da tabeta (children)
+        tbody.appendChild(linha1);
+        //cria a variavel do elemento "td" primeira linha)
+        var coluna1 = document.createElement("td");
+        /*preenche o conteudo da celula pelo conteudo do indice de lista do vetor
+        vgames(var "cont").vgame (string atribuida na lista)*/
+        coluna1.innerHTML = vgame[cont].vgame;
+        //Liga a celula criada e preenchida a linha da tabela
+        linha1.appendChild(coluna1);
+        var coluna2 = document.createElement("td");
+        coluna2.innerHTML = vgame[cont].ano;
+        linha1.appendChild(coluna2);
+        var coluna3 = document.createElement("td");
+        coluna3.innerHTML = vgame[cont].midia;
+        linha1.appendChild(coluna3);
+        var coluna4 = document.createElement("td");
+        coluna4.innerHTML = vgame[cont].control;
+        linha1.appendChild(coluna4);
+        var coluna5 = document.createElement("td");
+        coluna5.innerHTML = vgame[cont].fabricante;
+        linha1.appendChild(coluna5);
+    };
 
-    document.body.appendChild(table);
+    //var table = document.createElement('table');
+    //var tbody = document.createElement('tbody');
+    //for (var i = 0; i < 4; i++) {
+    //  var tr = document.createElement('tr');
+
+    // 1
+    //   var td = document.createElement('td');
+    //  var span = document.createElement('span');
+    //  span.innerHTML = 'teste ' + (i + 1);
+    //  td.appendChild(span);
+    // tr.appendChild(td);
+
+    // 2
+    // td = document.createElement('td');
+    // span = document.createElement('span');
+    // span.innerHTML = 'texto ' + (i + 1);
+    //  td.appendChild(span);
+    //   tr.appendChild(td);
+
+    //  tbody.appendChild(tr);
+    // }
+    // table.appendChild(tbody);
+
+    // document.body.appendChild(table);
 
     //var table = document.createElement ("tabela");
     //var textoP = document.createTextNode("porra");
