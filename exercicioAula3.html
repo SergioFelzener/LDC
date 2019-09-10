@@ -41,6 +41,11 @@
         //
         home.onclick = show;
         function show() {
+            document.getElementById('home-tab').classList.add("active");
+            document.getElementById('profile-tab').className = " active"
+            document.getElementById('message-tab').className = " active"
+            document.getElementById('settings-tab').className = " active"
+    
             document.getElementById('home').style.display="block";
             document.getElementById('profile').style.display="none";
             document.getElementById('messages').style.display="none";
