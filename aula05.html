@@ -39,6 +39,71 @@
             <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">conteudo da tab 4</div>
         </div>
         <script>
+
+            var tabHome = document.getElementById('home-tab');
+            tabHome.onclick = function () {
+                document.getElementById ('home-tab').classList.add ("Active");
+                document.getElementById ('profile-tab').classList.remove ("Active");
+                document.getElementById ('messages-tab').classList.remove ("Active");
+                document.getElementById ('settings-tab').classList.remove ("Active");
+                var home = document.getElementById ('home');
+                home.style.display = "block";
+                var profile = document.getElementById ('profile');
+                profile.style.display = "none";
+                var messages = document.getElementById ('messages');
+                messages.style.display = "none";
+                var settings = document.getElementById ('settings');
+                settings.style.display = "none";
+                
+            }
+            var tabProfile = document.getElementById('profile-tab');
+            tabProfile.onclick = function () {
+                document.getElementById ('home-tab').classList.remove ("Active");
+                document.getElementById ('profile-tab').classList.add ("Active");
+                document.getElementById ('messages-tab').classList.remove ("Active");
+                document.getElementById ('settings-tab').classList.remove ("Active");
+                var home = document.getElementById ('home');
+                home.style.display = "none";
+                var profile = document.getElementById ('profile');
+                profile.style.display = "block";
+                var messages = document.getElementById ('messages');
+                messages.style.display = "none";
+                var settings = document.getElementById ('settings');
+                settings.style.display = "none";
+                
+            }
+            var tabMessages = document.getElementById('messages-tab');
+            tabMessages.onclick = function () {
+                document.getElementById ('home-tab').classList.remove ("Active");
+                document.getElementById ('profile-tab').classList.remove ("Active");
+                document.getElementById ('messages-tab').classList.add ("Active");
+                document.getElementById ('settings-tab').classList.remove ("Active");
+                var home = document.getElementById ('home');
+                home.style.display = "none";
+                var profile = document.getElementById ('profile');
+                profile.style.display = "none";
+                var messages = document.getElementById ('messages');
+                messages.style.display = "block";
+                var settings = document.getElementById ('settings');
+                settings.style.display = "none";
+                
+            }
+            var tabSettings = document.getElementById('settings-tab');
+            tabSettings.onclick = function () {
+                document.getElementById ('home-tab').classList.remove ("Active");
+                document.getElementById ('profile-tab').classList.remove ("Active");
+                document.getElementById ('messages-tab').classList.remove ("Active");
+                document.getElementById ('settings-tab').classList.add ("Active");
+                var home = document.getElementById ('home');
+                home.style.display = "none";
+                var profile = document.getElementById ('profile');
+                profile.style.display = "none";
+                var messages = document.getElementById ('messages');
+                messages.style.display = "none";
+                var settings = document.getElementById ('settings');
+                settings.style.display = "block";
+                
+            }
             
 
 
