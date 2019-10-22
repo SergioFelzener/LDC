@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aula 04 revisao</title>
+</head>
+<style>
+    div {
+        border: 1px solid black;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+
+
+    }
+
+</style>
+
+<script>
+
+    function nome (param) {
+        console.log ("yo");
+        return true;
+    }
+
+    nome (null);
+
+    var outra = nome;
+    outra (null);
+
+    var maisuma = function () {
+        console.log ("yo2");
+    }
+    maisuma ();
+    
+
+
+    var vgame = [{
+            vgame: "xboxone",
+            ano: "2005",
+            midia: "dvd",
+            control: "2 controles",
+            fabricante: "Microsoft"
+
+        },
+        {
+            vgame: "PS3",
+            ano: "2005",
+            midia: "dvd",
+            control: "2 controles",
+            fabricante: "Sony"
+
+        },
+        {
+            vgame: "Super Nes",
+            ano: "1990",
+            midia: "cartucho",
+            control: "2 controles",
+            fabricante: "Nintendo"
+
+        },
+        {
+            vgame: "Xbox One",
+            ano: "2013",
+            midia: "Blue-Ray",
+            control: "2 controles",
+            fabricante: "Microsoft"
+
+        },
+        {
+            vgame: "PS4",
+            ano: "2013",
+            midia: "Blue-Ray",
+            control: "2 controles",
+            fabricante: "Sony Corporate"
+
+        }
+    ]
+</script>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="span8">
+                <h1 id="h1"></h1>
+                <!-- Criando tabela no HTML vazia sera alimentada via javascript-->
+                <table id="tabela" class="table table-striped table-condensed">
+                    <!-- Criando cabeçalho da tabela no HTML vazio sera alimentado via javascript-->
+                    <thead id="thead">
+                            <tr>
+                                    <th>Video Game</th>
+                                    <th>Ano Fabricação</th>
+                                    <th>Midia</th>
+                                    <th>Controles</th>
+                                    <th>Fabricante</th>
+                                </tr>
+
+                    </thead>
+                    <!-- Criando corpo da tabela no HTML vazio sera alimentado via javascript-->
+                    <tbody id="tbody">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    var tbody = document.getElementById ("tabela").children[1];
+    var linha1 = document.createElement ("tr");
+    // adicionando elemento na arvore 
+    tbody.appendChild (linha1);
+
+// criando colunas
+
+var coluna11 = document.createElement ("td");
+var coluna12 = document.createElement ("td");
+var coluna13 = document.createElement ("td");
+var coluna14 = document.createElement ("td");
+var coluna15 = document.createElement ("td");
+
+coluna11.innerHTML = vgame [0].vgame
+coluna12.innerHTML = vgame [0].ano 
+coluna13.innerHTML = vgame [0].midia
+coluna14.innerHTML = vgame [0].control
+coluna15.innerHTML = vgame [0].fabricante
+// adiconando colunas na arvore DOM 
+linha1.appendChild (coluna11);
+linha1.appendChild (coluna12);
+linha1.appendChild (coluna13);
+linha1.appendChild (coluna14);
+linha1.appendChild (coluna15);
+
+var linha2 = document.createElement ("tr");
+    // adicionando elemento na arvore 
+    tbody.appendChild (linha2);
+
+var coluna21 = document.createElement ("td");
+var coluna22 = document.createElement ("td");
+var coluna23 = document.createElement ("td");
+var coluna24 = document.createElement ("td");
+var coluna25 = document.createElement ("td");
+
+coluna21.innerHTML = vgame [1].vgame
+coluna22.innerHTML = vgame [1].ano 
+coluna23.innerHTML = vgame [1].midia
+coluna24.innerHTML = vgame [1].control
+coluna25.innerHTML = vgame [1].fabricante
+// adiconando colunas na arvore DOM 
+linha2.appendChild (coluna21);
+linha2.appendChild (coluna22);
+linha2.appendChild (coluna23);
+linha2.appendChild (coluna24);
+linha2.appendChild (coluna25);
+
+
+// usando com uma funcao 
+function alerta () {
+    alert ("alerta");
+};
+coluna13.onclick = alerta
+
+// usando funcao inline
+coluna13.onclick = function() {
+  //  coluna13.onclick = () => {
+  //  alert ("alertaaaa");
+}
+
+coluna13.onmouseover = function() {
+    this.style.backgroundColor = "red"
+
+
+}
+
+var botaoRemover = document.createElement ("imput");
+botaoRemover.type ="button";
+botaoRemover.value ="X";
+
+
+
+
+
+document.body.onclick = function (event) {
+    var div = document.createElement ("div");
+    document.body.appendChild (div);
+    div.style.top = event.pageY;
+    div.style.left = event.pageX;
+
+}
+
+
+
+
+
+</script>
+</body>
+
+</html>

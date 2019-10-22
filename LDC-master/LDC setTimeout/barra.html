@@ -1,0 +1,71 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<style>
+
+* {
+    border: 0;
+    margin: 0;
+}
+
+#caixa {
+    width: 200px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 15px;
+}
+
+#barra {
+    height: 40px;
+    background-color: darkblue;
+    width: 0%;
+}
+
+</style>
+
+<div id="caixa">
+    <div id="barra" style="width: 0%;">
+    </div>
+</div>
+
+<script>
+
+    // 
+
+    /*function barra (id, intervalo, incremento) {
+        var progress = document.getElementById (id);
+        
+        var status = parseInt (progress.style.width.replace ("%", ""));
+       
+        if (status < 100) {
+            status += incremento
+            progress.style.width = status + "%"; 
+
+        }
+        if (status < 100 ){
+            setTimeout (function(){barra(id, intervalo, incremento)}, 100);
+        }
+    
+    }
+    
+   document.getElementById ("caixa").onclick = function () {
+        barra ("barra", 10, 1);
+
+    }*/
+
+    // COM $JQUERY
+    
+    $("#caixa").click(function(){
+        $("#barra").animate({width: "100%"}, 1000, "easeInQuart");
+    });
+
+
+
+
+
+
+
+
+</script>
+
