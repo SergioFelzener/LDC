@@ -1,0 +1,94 @@
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+
+<body>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="messages-tab" data-toggle="tab" href="#messages" role="tab" aria-controls="messages"
+                aria-selected="false">Messages</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings"
+                aria-selected="false">Settings</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane" id="home" role="tabpanel" aria-labelledby="home-tab">conteudo da tab 1222</div>
+        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">conteudo da tab 2</div>
+        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">conteudo da tab 3</div>
+        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">conteudo da tab 4</div>
+    </div>
+
+    <script>
+        // criando variavel home no elemento home-tab
+        var home = document.getElementById ("home-tab");
+        //
+        home.onclick = show;
+        function show() {
+            document.getElementById('home-tab').classList.add("active");
+            document.getElementById('profile-tab').className = " active"
+            document.getElementById('message-tab').className = " active"
+            document.getElementById('settings-tab').className = " active"
+    
+            document.getElementById('home').style.display="block";
+            document.getElementById('profile').style.display="none";
+            document.getElementById('messages').style.display="none";
+            document.getElementById('settings').style.display="none";
+
+        };
+        var profile = document.getElementById ("profile-tab");
+        profile.onclick = show1;
+        function show1() {
+            document.getElementById('home').style.display="none";
+            document.getElementById('profile').style.display="block";
+            document.getElementById('messages').style.display="none";
+            document.getElementById('settings').style.display="none";
+
+        };
+        var message = document.getElementById ("messages-tab");
+        message.onclick = show2;
+        function show2() {
+            document.getElementById('home').style.display="none";
+            document.getElementById('profile').style.display="none";
+            document.getElementById('messages').style.display="block";
+            document.getElementById('settings').style.display="none";
+
+        };
+
+        var settings = document.getElementById ("settings-tab");
+        settings.onclick = show3;
+        function show3() {
+            document.getElementById('home').style.display="none";
+            document.getElementById('profile').style.display="none";
+            document.getElementById('messages').style.display="none";
+            document.getElementById('settings').style.display="block";
+
+        };
+
+
+
+   // function hide() {
+    //   document.getElementById().style.display="block";
+      // document.getElementById().style.display="none";
+     //  document.getElementById().style.display="none";
+    //   document.getElementById().style.display="none";
+//}
+    </script>
+</body>
+<html>
