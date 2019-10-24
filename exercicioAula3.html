@@ -41,24 +41,30 @@
         //
         home.onclick = show;
         function show() {
-            document.getElementById('home-tab').classList.add("active");
-            document.getElementById('profile-tab').className = " active"
-            document.getElementById('message-tab').className = " active"
-            document.getElementById('settings-tab').className = " active"
-    
             document.getElementById('home').style.display="block";
             document.getElementById('profile').style.display="none";
             document.getElementById('messages').style.display="none";
             document.getElementById('settings').style.display="none";
 
+            document.getElementById('home-tab').classList.add("active");
+            document.getElementById('profile-tab').classList.remove("active");
+            document.getElementById('messages-tab').classList.remove("active");
+            document.getElementById('settings-tab').classList.remove("active");
+
         };
         var profile = document.getElementById ("profile-tab");
         profile.onclick = show1;
         function show1() {
+
             document.getElementById('home').style.display="none";
             document.getElementById('profile').style.display="block";
             document.getElementById('messages').style.display="none";
             document.getElementById('settings').style.display="none";
+
+            document.getElementById('home-tab').classList.remove("active");
+            document.getElementById('profile-tab').classList.add("active");
+            document.getElementById('messages-tab').classList.remove("active");
+            document.getElementById('settings-tab').classList.remove("active");
 
         };
         var message = document.getElementById ("messages-tab");
@@ -69,6 +75,11 @@
             document.getElementById('messages').style.display="block";
             document.getElementById('settings').style.display="none";
 
+            document.getElementById('home-tab').classList.remove("active");
+            document.getElementById('profile-tab').classList.remove("active");
+            document.getElementById('messages-tab').classList.add("active");
+            document.getElementById('settings-tab').classList.remove("active");
+
         };
 
         var settings = document.getElementById ("settings-tab");
@@ -78,6 +89,11 @@
             document.getElementById('profile').style.display="none";
             document.getElementById('messages').style.display="none";
             document.getElementById('settings').style.display="block";
+
+            document.getElementById('home-tab').classList.remove("active");
+            document.getElementById('profile-tab').classList.remove("active");
+            document.getElementById('messages-tab').classList.remove("active");
+            document.getElementById('settings-tab').classList.add("active");
 
         };
 

@@ -2,7 +2,8 @@
     margin-top: 40px;
 }
 
-#tamanhoContainer {
+#tamanho {
+    margin-top: 5%;
     width: 500px;
 }
 #btnCadastro {
@@ -12,5 +13,9 @@
     background-color: #E50F87;
     color: #ffffff;
     font-weight: bold;
+
+}
+h2 {
+    color: rgb(0, 94, 255);
 
 }
