@@ -1,0 +1,89 @@
+<html>
+
+<head>
+
+    <style>
+        .selecionado {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tab" style="margin-top: 20px;">
+        <div style="width: 250px; border: 1px solid darkgreen; height: 25px;">
+            <div id="t1" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                tab 1
+            </div>
+            <div id="t2" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                tab 2
+            </div>
+            <div id="t3" style="width: 50px; height: 25px; border: 1px solid black; float: left; cursor: pointer;">
+                tab 3
+            </div>
+        </div>
+        <div style="clear: both;"> </div>
+        <div style="width: 250px; border: 1px solid darkgreen; height: 200px;">
+            <div id="ct1" style="width: 200px; height: 50px; border: 1px solid red; display: block;">
+            </div>
+            <div id="ct2" style="width: 200px; height: 50px;  border: 1px solid green; display: none;">
+            </div>
+            <div id="ct3" style="width: 200px; height: 50px; border: 1px solid blue; display: none;">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("t1").onclick = function () {
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.querySelector("#ct1").innerHTML = ajax.responseText;
+                    document.getElementById("ct1").style.display="block";
+                    document.getElementById("ct2").style.display="none";
+                    document.getElementById("ct3").style.display="none";
+                    
+                }
+            }
+            ajax.open("GET", "conteudo.php?conteudo=1");
+            ajax.send();
+        }
+
+
+        document.getElementById("t2").onclick = function () {
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.querySelector("#ct2").innerHTML = ajax.responseText;
+                    document.getElementById("ct1").style.display="none";
+                    document.getElementById("ct2").style.display="block";
+                    document.getElementById("ct3").style.display="none";
+                }
+            }
+            ajax.open("GET", "conteudo.php?conteudo=2");
+            ajax.send();
+        }
+
+
+        document.getElementById("t3").onclick = function () {
+
+            var ajax = new XMLHttpRequest();
+
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    document.querySelector("#ct3").innerHTML = ajax.responseText;
+                    document.getElementById("ct1").style.display="none";
+                    document.getElementById("ct2").style.display="none";
+                    document.getElementById("ct3").style.display="block";
+                }
+            }
+            ajax.open("GET", "conteudo.php?conteudo=3");
+            ajax.send();
+        }
+
+
+    </script>
